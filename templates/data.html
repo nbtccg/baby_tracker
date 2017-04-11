@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//WAPFORUM//DTD XHTML Mobile 1.0//EN" "http://www.wapforum.org/DTD/xhtml-mobile10.dtd">
+<html lang="en">
+<title>Baby Tracker Data</title>
+<script type=text/javascript>
+//  var $SCRIPT_ROOT = {{ request.script_root|tojson|safe }};
+//  setInterval(                               //Periodically 
+//  $function() {
+//     $.getJSON(                            //Get some values from the server
+//        $SCRIPT_ROOT + '/_get_values',      // At this URL
+//        {},                                // With no extra parameters
+//        function(data)                     // And when you get a response
+//        {
+//          $("#result").text(data.result);  // Write the results into the 
+//                                           // #result element
+//        });
+//  },
+//  500);                                    // And do it every 500ms
+</script>
+
+<h1>Baby Tracker Data</h1>
+
+<body>
+<form role="form" method='POST' action='/'>
+<table border="1">
+{% for lineCount, value in baby_data|dictsort %}
+  {% set myvalue = baby_data[lineCount]["value"] %}
+  {% if baby_data[lineCount]["date"] == "DAY_CHANGE" %}
+    <tr><td><b>Summary</b></td><td>{{baby_data[lineCount]["data_type"]}}</td><td>{{myvalue}}</td><td></td></tr>
+    </table><br>
+    <table border="1">
+  {% else %}
+    <tr><td>{{baby_data[lineCount]["date"]}}</td><td>{{baby_data[lineCount]["data_type"]}}</td><td>{{myvalue}}</td><td>{{baby_data[lineCount]["notes"]}}</td></tr>
+  {% endif %}
+{% endfor %}
+</table>
+</form>
+<section id="page_bottom">                                                                           
+</section>                                                                                      
+
+</body>
+</html>

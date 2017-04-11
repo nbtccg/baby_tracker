@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//WAPFORUM//DTD XHTML Mobile 1.0//EN" "http://www.wapforum.org/DTD/xhtml-mobile10.dtd">
+<html lang="en">
+<title>Baby Tracker</title>
+<script type=text/javascript>
+//  var $SCRIPT_ROOT = {{ request.script_root|tojson|safe }};
+//  setInterval(                               //Periodically 
+//  $function() {
+//     $.getJSON(                            //Get some values from the server
+//        $SCRIPT_ROOT + '/_get_values',      // At this URL
+//        {},                                // With no extra parameters
+//        function(data)                     // And when you get a response
+//        {
+//          $("#result").text(data.result);  // Write the results into the 
+//                                           // #result element
+//        });
+//  },
+//  500);                                    // And do it every 500ms
+</script>
+
+<style type="text/css">
+
+body {
+    background-image: url("/static/baby_picture.png");
+    background-repeat: no-repeat;
+    background-position: right top;
+    width: 304px;
+    height: 228px;
+}
+
+</style>
+
+
+<body class="bg-solid-light slideContainer strut-slide-0" style="background: url(/static/abby.jpg); background-repeat: no-repeat; background-size: 800px 550px ;">
+<!--<body background="/static/abby.jpg" style="width:304px;height:228px">-->
+<h1>Baby Tracker</h1>
+<!--<img src="/static/abby.jpg" alt="Abby" class=rotateimg90  style="width:304px;height:228px"> -->
+<!--<body background="/static/abby.jpg", style="width:304px;height:228px">-->
+
+<form role="form" method='POST' action='/'>
+Date Time:<br> 
+<input type="text" name="date" value={{date}}><br>
+<input type="text" name="time" value={{time}}><br><br>
+Diapers:<br>
+<input type="submit" name="submit" value="wet">
+<input type="submit" name="submit" value="stool"><br><br>
+Supplement:<br>
+<input type="submit" name="submit" value="formula">
+<input type="submit" name="submit" value="breast milk">
+<input type="number" name="supp amount" value=180>ml
+<br>
+Formula:
+<input type="submit" name="submit" value="formula 5oz">
+<input type="submit" name="submit" value="formula 6oz">
+<input type="submit" name="submit" value="formula 7oz">
+<input type="submit" name="submit" value="formula 8oz">
+<br><br>
+Breast Feeding:<br> 
+<input type="submit" name="submit" value="breast fed">
+<input type="text" name="duration" value="20">min<br><br>
+Pumping:<br>
+<input type="submit" name="submit" value="pump">
+<input type="text" name="pump amount" value="50">ml<br>
+<br><br>
+<input type="submit" name="submit" value="Show Data">
+</form>
+</body>
+</html>
