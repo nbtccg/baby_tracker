@@ -3,19 +3,6 @@
 <html lang="en">
 <title>Baby Tracker</title>
 <script type=text/javascript>
-//  var $SCRIPT_ROOT = {{ request.script_root|tojson|safe }};
-//  setInterval(                               //Periodically 
-//  $function() {
-//     $.getJSON(                            //Get some values from the server
-//        $SCRIPT_ROOT + '/_get_values',      // At this URL
-//        {},                                // With no extra parameters
-//        function(data)                     // And when you get a response
-//        {
-//          $("#result").text(data.result);  // Write the results into the 
-//                                           // #result element
-//        });
-//  },
-//  500);                                    // And do it every 500ms
 </script>
 
 <style type="text/css">
@@ -32,10 +19,7 @@ body {
 
 
 <body class="bg-solid-light slideContainer strut-slide-0" style="background: url(/static/abby.jpg); background-repeat: no-repeat; background-size: 800px 550px ;">
-<!--<body background="/static/abby.jpg" style="width:304px;height:228px">-->
 <h1>Baby Tracker</h1>
-<!--<img src="/static/abby.jpg" alt="Abby" class=rotateimg90  style="width:304px;height:228px"> -->
-<!--<body background="/static/abby.jpg", style="width:304px;height:228px">-->
 
 <form role="form" method='POST' action='/'>
 Date Time:<br> 
@@ -49,12 +33,6 @@ Supplement:<br>
 <input type="submit" name="submit" value="breast milk">
 <input type="number" name="supp amount" value=180>ml
 <br>
-Formula:
-<input type="submit" name="submit" value="formula 5oz">
-<input type="submit" name="submit" value="formula 6oz">
-<input type="submit" name="submit" value="formula 7oz">
-<input type="submit" name="submit" value="formula 8oz">
-<br><br>
 Breast Feeding:<br> 
 <input type="submit" name="submit" value="breast fed">
 <input type="text" name="duration" value="20">min<br><br>
